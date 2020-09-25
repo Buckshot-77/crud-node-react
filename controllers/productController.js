@@ -4,21 +4,56 @@ exports.postNewProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body);
 
-    console.log(product);
-
-    res.send('Done');
+    res.status(201).json({
+      message: 'success',
+      data: product,
+    });
   } catch (error) {
-    res.send(`Error! 🧨: ${error.message}`);
+    res.status(400).json({
+      status: 'fail',
+      message: `Error: ${error.message}`,
+    });
   }
 };
 
 exports.getProducts = async (req, res) => {
-  res.json({
-    message: 'Hello from the server!',
-  });
-}
+  try {
+    const products = await Product.find({});
+    res.status(200).json({
+      status: 'success',
+      data: products,
+    });
+  } catch (error) {
+    res.status(404).json({
+      status: 'fail',
+      message: `Error: ${error.message}`,
+    });
+  }
+};
 
 exports.deleteProduct = async (req, res) => {
-  await Product.deleteMany({});
-  res.send('Deleted');
-}
+  try {
+    await Product.deleteOne(req.body);
+    res.send('Deleted');
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      message: `Error: ${error.message}`,
+    });
+  }
+};
+
+exports.wipeDB = async (req, res) => {
+  try {
+    const product = await Product.deleteMany({});
+    res.status(204).json({
+      status: 'success',
+      data: product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      message: `Error: ${error.message}`,
+    });
+  }
+};

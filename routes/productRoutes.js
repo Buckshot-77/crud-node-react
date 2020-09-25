@@ -8,4 +8,6 @@ router.post('/', productController.postNewProduct);
 
 router.delete('/', productController.deleteProduct);
 
+router.delete('/wipeAll', productController.wipeDB);
+
 module.exports = router;

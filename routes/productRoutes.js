@@ -1,19 +1,11 @@
-const router = require('express').Router()
-const Product = require('../model/Product');
+const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'Hello from the server!',
-  });
-});
+const productController = require('../controllers/productController');
 
-router.post('/', async (req, res) => {
-  const product = await Product.create(req.body);
+router.get('/', productController.getProducts);
 
+router.post('/', productController.postNewProduct);
 
-  console.log(req.body);
-
-  res.send('Done')
-});
+router.delete('/', productController.deleteProduct);
 
 module.exports = router;

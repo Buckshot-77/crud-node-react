@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const productController = require('../controllers/productController');
 
+router.delete('/wipeAll', productController.wipeDB);
 router
   .route('/')
   .get(productController.getAllProducts)
@@ -12,7 +13,5 @@ router
   .get(productController.getOneProduct)
   .patch(productController.updateProduct)
   .delete(productController.deleteProduct);
-
-router.delete('/wipeAll', productController.wipeDB);
 
 module.exports = router;

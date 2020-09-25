@@ -2,15 +2,16 @@ const router = require('express').Router();
 
 const productController = require('../controllers/productController');
 
-router.get('/', productController.getAllProducts);
+router
+  .route('/')
+  .get(productController.getAllProducts)
+  .post(productController.postNewProduct);
 
-router.get('/:id', productController.getOneProduct);
-
-router.post('/', productController.postNewProduct);
-
-router.patch('/:id', productController.updateProduct);
-
-router.delete('/', productController.deleteProduct);
+router
+  .route('/:id')
+  .get(productController.getOneProduct)
+  .patch(productController.updateProduct)
+  .delete(productController.deleteProduct);
 
 router.delete('/wipeAll', productController.wipeDB);
 

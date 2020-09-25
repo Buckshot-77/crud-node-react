@@ -1,0 +1,21 @@
+{
+  "name": "crud-node-react",
+  "version": "1.0.0",
+  "description": "CRUD simples feito com node, express, mongodb e react",
+  "main": "index.js",
+  "repository": "git@github.com:Buckshot-77/crud-node-react.git",
+  "author": "Hugo Oliveira <hugo684@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  }
+}

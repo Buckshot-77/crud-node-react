@@ -9,6 +9,6 @@ exports.sendPositiveResponse = (statusCode, responseObject, responseData) => {
   const jsonResponseData = responseData ? responseData : null;
   responseObject.status(statusCode).json({
     status: 'success',
-    data: jsonResponseData,
+    products: jsonResponseData,
   });
 };

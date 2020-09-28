@@ -12,7 +12,7 @@ export const Home = () => {
     })();
   }, []);
   const fetchProducts = async () => {
-    return axios.get('localhost:3001/');
+    return axios.get('http://localhost:3001/');
   };
   return (
     <>

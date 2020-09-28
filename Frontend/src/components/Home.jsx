@@ -16,10 +16,16 @@ export const Home = () => {
   const fetchProducts = async () => {
     return axios.get('http://localhost:3001/');
   };
+
+  const handleDelete = async (productID) => {
+    await axios.delete(`http://localhost:3001/${productID}`);
+    
+  };
+
   return (
     <>
       <Header />
-      <ProductList products={products} />
+      <ProductList products={products} handleDelete={handleDelete} />
     </>
   );
 };

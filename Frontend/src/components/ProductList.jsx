@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 
-export const ProductList = ({ products, handleDelete }) => {
+export const ProductList = ({ products, deleteProduct }) => {
   return (
     <ListGroup>
       {products.map((product) => {
@@ -15,14 +15,14 @@ export const ProductList = ({ products, handleDelete }) => {
             </ul>
             <div className="ml-auto">
               <Link to={`/edit/${product._id}`}>
-                <Button className="btn btn-warning mr-1">Edit</Button>
+                <Button className="btn btn-warning mr-1">Editar</Button>
               </Link>
               <Link to="/">
                 <Button
                   color="danger"
-                  onClick={() => handleDelete(product._id)}
+                  onClick={() => deleteProduct(product._id)}
                 >
-                  Delete
+                  Deletar
                 </Button>
               </Link>
             </div>

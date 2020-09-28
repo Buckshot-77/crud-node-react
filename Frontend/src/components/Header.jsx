@@ -6,11 +6,11 @@ export const Header = () => {
   return (
     <Navbar color="dark" dark>
       <Container>
-        <NavbarBrand href="/">Products</NavbarBrand>
+        <NavbarBrand href="/">Produtos</NavbarBrand>
         <Nav>
           <NavItem>
             <Link to="/add" className="btn btn-primary">
-              Add Product
+              Adicionar Produto
             </Link>
           </NavItem>
         </Nav>

@@ -1,11 +1,12 @@
 const router = require('express').Router();
+const cors = require('cors');
 
 const productController = require('../controllers/productController');
 
 router.delete('/wipeAll', productController.wipeDB);
 router
   .route('/')
-  .get(productController.getAllProducts)
+  .get(cors(), productController.getAllProducts)
   .post(productController.postNewProduct);
 
 router

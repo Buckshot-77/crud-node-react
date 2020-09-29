@@ -13,3 +13,7 @@ Para rodar o projeto, as variáveis de ambiente necessárias serão mandadas via
     3 - Adicionar um arquivo "config.env" na pasta ./Backend com as variáveis de ambiente informadas via e-mail
     4 - Rodar "yarn start" ou "npm run start", conforme a preferência de gerenciador de pacotes, primeiro no Backend e depois no Frontend.
     5 - Fazer as requisições utilizando a interface do Frontend.
+    
+    
+O backend foi construído como uma API REST. Para uso do backend separadamente, sem usar o frontend, consultar a documentação feita no Postman:
+https://documenter.getpostman.com/view/11029232/TVKJxEsb

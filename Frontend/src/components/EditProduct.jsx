@@ -16,17 +16,17 @@ export const EditProduct = (props) => {
       setQuantity(fetchedProduct.quantidade);
       setPrice(fetchedProduct.valor);
     })();
-  });
+  }, [props.match.params.id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.patch(`http://localhost:3001/${props.match.params.id}`, {
+    await axios.patch(`http://localhost:3001/${props.match.params.id}`, {
       item: name,
       quantidade: quantity,
       valor: price,
     });
-    console.log(name, quantity, price)
-    // props.history.push('/');
+    console.log(name, quantity, price);
+    props.history.push('/');
   };
 
   return (

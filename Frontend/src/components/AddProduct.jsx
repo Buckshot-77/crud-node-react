@@ -4,9 +4,9 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios';
 
 export const AddProduct = (props) => {
-  const [name, setName] = useState('');
-  const [quantity, setQuantity] = useState(null);
-  const [price, setPrice] = useState(null);
+  const [name, setName] = useState('Caneta');
+  const [quantity, setQuantity] = useState(1);
+  const [price, setPrice] = useState(2.99);
 
   const createProduct = async (e) => {
     e.preventDefault();
@@ -15,6 +15,7 @@ export const AddProduct = (props) => {
       quantidade: quantity,
       valor: price,
     });
+    console.log(name, quantity, price)
     props.history.push('/');
   };
   return (

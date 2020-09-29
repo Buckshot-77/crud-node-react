@@ -58,7 +58,7 @@ export const EditProduct = (props) => {
           onChange={(e) => setPrice(e.target.value)}
         ></Input>
       </FormGroup>
-      <Button type="submit">Editar Nome</Button>
+      <Button type="submit" className="btn btn-primary">Confirmar Edição</Button>
       <Link to="/" className="btn btn-danger ml-2">
         Cancelar
       </Link>

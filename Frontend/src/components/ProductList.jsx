@@ -9,6 +9,7 @@ export const ProductList = ({ products, deleteProduct }) => {
         return (
           <ListGroupItem key={product._id} className="d-flex">
             <ul style={{ listStyleType: 'none' }}>
+              <l1>{`ID: ${product._id}`}</l1>
               <li>{`Nome: ${product.item}`}</li>
               <li>{`Quantidade: ${product.quantidade}`}</li>
               <li>{`Valor: ${product.valor}`}</li>
